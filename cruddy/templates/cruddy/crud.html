@@ -90,7 +90,7 @@
                             <td><input type="text" name="name" id="name" required></td>
                             <td><input type="email" name="email" id="email" placeholder="abc@xyz.org" required></td>
                             <td><input type="password" name="password" id="password" required></td>
-                            <td><input type="tel" name="phone" id="phone" pattern="[0-9]{10}" placeholder="1234567890" required></td>
+                            <td><input type="tel" name="phone" id="phone" placeholder="1234567890" required></td>
                             <td><input type="submit" value="Create"></td>
                         </tr>
                         </tbody>
@@ -185,6 +185,8 @@
         </div>
 
     </div>
+    <button onclick=logout()>Click me</button>
+
 
     <!-- Back end SQL data definition code (SQLalchemy) -->
     <div class="container py-4">
@@ -205,3 +207,4 @@
     </div>
 
 {% endblock %}
+

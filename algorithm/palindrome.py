@@ -52,3 +52,16 @@ class Palindrome:
     @property
     def analysis(self):
         return self._analysis
+# Tester Code
+if __name__ == "__main__":
+    '''Value for testing'''
+    '''Constructor of Class object'''
+    palindrome = Palindrome(n)
+
+    '''Using getters to obtain data from object'''
+    print(f"Palindrome number for {n} = {palindrome.number}")
+    print(f"Palindrome series for {n} = {palindrome.list}")
+
+    '''Using method to get data from object'''
+    for i in range(n):
+        print(f"Fibonacci sequence {i + 1} = {palindrome.get_sequence(i)}")

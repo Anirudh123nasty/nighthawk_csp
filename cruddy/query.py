@@ -1,3 +1,6 @@
+from flask import url_for
+from werkzeug.utils import redirect
+
 from __init__ import login_manager, db
 from cruddy.model import Users
 from flask_login import current_user, login_user, logout_user
@@ -94,7 +97,7 @@ def user_loader(user_id):
 
 
 # Authorise new user requires user_name, email, password
-def authorize(name, email, password):
+def authorize(name, email, password, phone):
     if is_user(email, password):
         return False
     else:
@@ -102,7 +105,7 @@ def authorize(name, email, password):
             name=name,
             email=email,
             password=password,
-            phone="1234567890"  # this should be added to authorize.html
+            phone=phone,  # this should be added to authorize.html
         )
         # encrypt their password and add it to the auth_user object
         auth_user.create()
@@ -112,6 +115,7 @@ def authorize(name, email, password):
 # logout user
 def logout():
     logout_user()  # removes login state of user from session
+    return redirect(url_for('crud.crud_login'))
 
 
 # Test some queries from implementations above
