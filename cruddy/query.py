@@ -115,7 +115,6 @@ def authorize(name, email, password, phone):
 # logout user
 def logout():
     logout_user()  # removes login state of user from session
-    return redirect(url_for('crud.crud_login'))
 
 
 # Test some queries from implementations above

@@ -77,6 +77,12 @@ def create():
         po.create()
     return redirect(url_for('crud.crud'))
 
+@app_crud.route('/logout/', methods=["POST"])
+@login_required
+def logout():
+    logout()
+    return redirect(url_for('crud.crud'))
+
 
 # CRUD read
 @app_crud.route('/read/', methods=["POST"])
